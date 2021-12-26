@@ -1,0 +1,181 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-04-26 19:54:15
+  from "C:\xampp\htdocs\develop\Registro_de_Tramites\smarty\templates\People.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_571fab476457d8_28423702',
+  'file_dependency' => 
+  array (
+    '6a09978993437d6060ca0b794dfdb0187a0c75c6' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\develop\\Registro_de_Tramites\\smarty\\templates\\People.tpl',
+      1 => 1461693250,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:_Layout.tpl' => 1,
+  ),
+),false)) {
+function content_571fab476457d8_28423702 ($_smarty_tpl) {
+$_smarty_tpl->ext->_inheritance->init($_smarty_tpl, true);
+?>
+<!DOCTYPE html>
+<!--
+Copyright 2015 Ayudante de Ingeniero en Sistemas Alvaro Rodriguez Scelza
+A menos que se indique lo contrario. Ver terminos y condiciones en la siguiente URL:
+https://www.binpress.com/license/view/l/a598eab68adc6e88537eeedea685b59c
+-->
+
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'title', array (
+  0 => 'block_19387571fab475dc022_93569923',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'body', array (
+  0 => 'block_26840571fab475e3d21_32071603',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'javascprits', array (
+  0 => 'block_9265571fab47641944_17879406',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php $_smarty_tpl->ext->_inheritance->endChild($_smarty_tpl);
+$_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:_Layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+}
+/* {block 'title'}  file:People.tpl */
+function block_19387571fab475dc022_93569923($_smarty_tpl, $_blockParentStack) {
+?>
+Personas<?php
+}
+/* {/block 'title'} */
+/* {block 'body'}  file:People.tpl */
+function block_26840571fab475e3d21_32071603($_smarty_tpl, $_blockParentStack) {
+?>
+
+
+    <h2>Personas</h2>
+    <?php if (($_smarty_tpl->tpl_vars['userProfile']->value != "Básico")) {?>
+        <p>
+            <a href="NewPerson.php">Crear</a>
+        </p>
+    <?php }?>
+
+    <div>
+        <select id="selectSearcher" class="selectpicker">
+            <option value="namesAndSurnames">Nombres y Apellidos</option>
+            <option value="recordNumber">Número de Expediente</option>
+            <option value="recordDate">Año de Expediente</option>
+            <option value="birthDate">Fecha de Nacimiento</option>
+            <option value="nationality">Nacionalidad</option>
+        </select> 
+        <input id="inputSearcher" maxlength="70" size="80" placeholder="Buscar">
+    </div>
+
+    <br>
+
+    <table class="table">
+        <tr>
+            <th class="col-md-1">Nombres</th> 
+            <th class="col-md-1">Apellidos</th>
+            <th class="col-md-1">Número de Expediente</th>
+            <th class="col-md-1">Año de Expediente</th>
+            <th class="col-md-1">Nacionalidad</th>
+            <th class="col-md-1">Lugar de Nacimiento</th>
+            <th class="col-md-1">Fecha de Nacimiento</th>
+            <th class="col-md-1">Resolución Ministerial</th>
+            <th class="col-md-1">Número de jaque</th>
+            <th class="col-md-1">Número de Rollo</th>
+            <th class="col-md-2"></th>
+        </tr>
+        <tbody id="tableBody">
+            <?php
+$_from = $_smarty_tpl->tpl_vars['people']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_person_0_saved_item = isset($_smarty_tpl->tpl_vars['person']) ? $_smarty_tpl->tpl_vars['person'] : false;
+$_smarty_tpl->tpl_vars['person'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['person']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['person']->value) {
+$_smarty_tpl->tpl_vars['person']->_loop = true;
+$__foreach_person_0_saved_local_item = $_smarty_tpl->tpl_vars['person'];
+?>
+                <tr>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['Names'];?>
+</td> 
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['Surnames'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['RecordNumber_Number'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['RecordNumber_Year'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['Nationality'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['BirthPlace'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['BirthDate'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['MinisterialResolution'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['CheckNumber'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['person']->value['RollNumber'];?>
+</td>
+                    <td>
+                        <a href="Procedures.php?personId=<?php echo $_smarty_tpl->tpl_vars['person']->value['Id'];?>
+">Trámites</a>
+                        <?php if (($_smarty_tpl->tpl_vars['userProfile']->value != "Básico")) {?>
+                            |
+                            <a id="<?php echo $_smarty_tpl->tpl_vars['person']->value['Id'];?>
+" name="<?php echo $_smarty_tpl->tpl_vars['person']->value['Names'];?>
+ <?php echo $_smarty_tpl->tpl_vars['person']->value['Surnames'];?>
+" class="peopleRemovalLink" href="RemovePerson.php?PersonId=<?php echo $_smarty_tpl->tpl_vars['person']->value['Id'];?>
+">Borrar</a> |
+                            <a href="ModifyPerson.php?PersonId=<?php echo $_smarty_tpl->tpl_vars['person']->value['Id'];?>
+">Modificar</a>
+                        <?php }?>
+                    </td>
+                </tr> 
+            <?php
+$_smarty_tpl->tpl_vars['person'] = $__foreach_person_0_saved_local_item;
+}
+if ($__foreach_person_0_saved_item) {
+$_smarty_tpl->tpl_vars['person'] = $__foreach_person_0_saved_item;
+}
+?>
+        </tbody>
+    </table>
+
+<?php
+}
+/* {/block 'body'} */
+/* {block 'javascprits'}  file:People.tpl */
+function block_9265571fab47641944_17879406($_smarty_tpl, $_blockParentStack) {
+?>
+
+    <?php echo '<script'; ?>
+ type="text/javascript" src="scripts/People.js"><?php echo '</script'; ?>
+>
+<?php
+}
+/* {/block 'javascprits'} */
+}

@@ -1,0 +1,128 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-04-29 19:12:16
+  from "C:\xampp\htdocs\develop\Registro_de_Tramites\smarty\templates\Users.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_572395f0b86046_03239841',
+  'file_dependency' => 
+  array (
+    '14c507d1c15c83ad54f1dbaa8e918088d0cc7c0d' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\develop\\Registro_de_Tramites\\smarty\\templates\\Users.tpl',
+      1 => 1461949924,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:_Layout.tpl' => 1,
+  ),
+),false)) {
+function content_572395f0b86046_03239841 ($_smarty_tpl) {
+$_smarty_tpl->ext->_inheritance->init($_smarty_tpl, true);
+?>
+<!DOCTYPE html>
+<!--
+Copyright 2015 Ayudante de Ingeniero en Sistemas Alvaro Rodriguez Scelza
+A menos que se indique lo contrario. Ver terminos y condiciones en la siguiente URL:
+https://www.binpress.com/license/view/l/a598eab68adc6e88537eeedea685b59c
+-->
+
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'title', array (
+  0 => 'block_12213572395f0b533a7_26527711',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'body', array (
+  0 => 'block_9802572395f0b5b0a3_39179403',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'javascprits', array (
+  0 => 'block_2491572395f0b821b0_33452231',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+$_smarty_tpl->ext->_inheritance->endChild($_smarty_tpl);
+$_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:_Layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+}
+/* {block 'title'}  file:Users.tpl */
+function block_12213572395f0b533a7_26527711($_smarty_tpl, $_blockParentStack) {
+?>
+Usuarios<?php
+}
+/* {/block 'title'} */
+/* {block 'body'}  file:Users.tpl */
+function block_9802572395f0b5b0a3_39179403($_smarty_tpl, $_blockParentStack) {
+?>
+
+
+    <h2>Usuarios</h2>
+    <p>
+        <a href="NewUser.php">Crear</a>
+    </p>
+
+    <table class="table">
+        <tr> 
+            <th>Nombre</th>
+            <th>Perfil</th>
+            <th></th>
+        </tr> 
+        <?php
+$_from = $_smarty_tpl->tpl_vars['users']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_user_0_saved_item = isset($_smarty_tpl->tpl_vars['user']) ? $_smarty_tpl->tpl_vars['user'] : false;
+$_smarty_tpl->tpl_vars['user'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['user']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
+$_smarty_tpl->tpl_vars['user']->_loop = true;
+$__foreach_user_0_saved_local_item = $_smarty_tpl->tpl_vars['user'];
+?>
+            <tr>
+                <td><?php echo $_smarty_tpl->tpl_vars['user']->value['UserName'];?>
+</td> 
+                <td><?php echo $_smarty_tpl->tpl_vars['user']->value['Profile'];?>
+</td>
+                <td>
+                    <a name="<?php echo $_smarty_tpl->tpl_vars['user']->value['UserName'];?>
+" class="removalLink" href="RemoveUser.php?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['Id'];?>
+">Borrar</a>
+                    <a href="ModifyUser.php?userId=<?php echo $_smarty_tpl->tpl_vars['user']->value['Id'];?>
+">Modificar</a>
+                </td>
+            </tr> 
+        <?php
+$_smarty_tpl->tpl_vars['user'] = $__foreach_user_0_saved_local_item;
+}
+if ($__foreach_user_0_saved_item) {
+$_smarty_tpl->tpl_vars['user'] = $__foreach_user_0_saved_item;
+}
+?>
+    </table>
+<?php
+}
+/* {/block 'body'} */
+/* {block 'javascprits'}  file:Users.tpl */
+function block_2491572395f0b821b0_33452231($_smarty_tpl, $_blockParentStack) {
+?>
+
+
+<?php
+}
+/* {/block 'javascprits'} */
+}

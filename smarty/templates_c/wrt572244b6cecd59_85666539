@@ -1,0 +1,121 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-04-28 19:13:26
+  from "C:\xampp\htdocs\develop\Registro_de_Tramites\smarty\templates\NewProcedure.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_572244b6cecd55_61798116',
+  'file_dependency' => 
+  array (
+    '60071eea14693b7b29444da7679794f13834634a' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\develop\\Registro_de_Tramites\\smarty\\templates\\NewProcedure.tpl',
+      1 => 1461863599,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:_Layout.tpl' => 1,
+  ),
+),false)) {
+function content_572244b6cecd55_61798116 ($_smarty_tpl) {
+$_smarty_tpl->ext->_inheritance->init($_smarty_tpl, true);
+?>
+<!DOCTYPE html>
+<!--
+Copyright 2015 Ayudante de Ingeniero en Sistemas Alvaro Rodriguez Scelza
+A menos que se indique lo contrario. Ver terminos y condiciones en la siguiente URL:
+https://www.binpress.com/license/view/l/a598eab68adc6e88537eeedea685b59c
+-->
+
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'title', array (
+  0 => 'block_1454572244b6cc9ad2_17599914',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'body', array (
+  0 => 'block_8015572244b6cd17d4_85074444',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+?>
+
+<?php 
+$_smarty_tpl->ext->_inheritance->processBlock($_smarty_tpl, 0, 'javascprits', array (
+  0 => 'block_5852572244b6ce8ed4_60045547',
+  1 => false,
+  3 => 0,
+  2 => 0,
+));
+$_smarty_tpl->ext->_inheritance->endChild($_smarty_tpl);
+$_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:_Layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+}
+/* {block 'title'}  file:NewProcedure.tpl */
+function block_1454572244b6cc9ad2_17599914($_smarty_tpl, $_blockParentStack) {
+?>
+Nuevo Trámite<?php
+}
+/* {/block 'title'} */
+/* {block 'body'}  file:NewProcedure.tpl */
+function block_8015572244b6cd17d4_85074444($_smarty_tpl, $_blockParentStack) {
+?>
+
+    <h2>Crear</h2>
+
+    <form class="form-horizontal" method="POST" action="NewProcedureValidations.php">
+        <fieldset>
+            <legend>Trámite</legend>
+
+            <input name="procedurePersonId" value="<?php echo $_smarty_tpl->tpl_vars['procedurePersonId']->value;?>
+" hidden>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Fecha</label>
+                <div class="col-md-4">
+                    <input class="form-control" name="date" type="date">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Descripción</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" name="description"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear" class="btn btn-default"/>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <a href="Procedures.php?personId=<?php echo $_smarty_tpl->tpl_vars['procedurePersonId']->value;?>
+">Volver a la Lista</a>
+    
+    <?php if ($_smarty_tpl->tpl_vars['creationAndInsertionOk']->value == true) {?>
+        <?php echo '<script'; ?>
+>alert("El trámite fue creado correctamente!");<?php echo '</script'; ?>
+>                
+    <?php }
+}
+/* {/block 'body'} */
+/* {block 'javascprits'}  file:NewProcedure.tpl */
+function block_5852572244b6ce8ed4_60045547($_smarty_tpl, $_blockParentStack) {
+?>
+
+
+<?php
+}
+/* {/block 'javascprits'} */
+}
